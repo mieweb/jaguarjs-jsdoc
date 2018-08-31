@@ -13,9 +13,14 @@ var self = this;
     ?>
         <li class="item" data-name="<?js= item.longname ?>">
             <span class="title">
+                <?js if (item.type === 'global') { ?>
+                <?js= self.linkto(item.longname, 'Global') ?>
+                <span class="static">global</span>
+                <?js } else { ?>
                 <?js= self.linkto(item.longname, item.longname) ?>
-                <?js if (item.type === 'namespace') { ?>
+                <?js     if (item.type === 'namespace') { ?>
                 <span class="static">static</span>
+                <?js     } ?>
                 <?js } ?>
             </span>
             <ul class="members itemMembers">

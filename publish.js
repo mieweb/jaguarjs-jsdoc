@@ -202,6 +202,28 @@ function attachModuleSymbols(doclets, modules) {
 function buildNav(members) {
     var nav = [];
 
+    nav.push({
+        type: 'global',
+        longname: 'global',
+        name: 'global',
+        members: find({
+            kind: 'member',
+            scope: 'global'
+        }),
+        methods: find({
+            kind: 'function',
+            scope: 'global'
+        }),
+        typedefs: find({
+            kind: 'typedef',
+            scope: 'global'
+        }),
+        events: find({
+            kind: 'event',
+            scope: 'global'
+        })
+    });
+
     if (members.namespaces.length) {
         _.each(members.namespaces, function (v) {
             nav.push({
