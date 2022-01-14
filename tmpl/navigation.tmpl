@@ -11,7 +11,7 @@ var self = this;
     <?js
     this.nav.forEach(function (item) {
     ?>
-        <li class="item" data-name="<?js= item.longname ?>">
+        <li class="item" data-name="<?js= item.longname ?>" data-name-sanitized="<?js= item.longname.replace(/[:~]/g, '-') ?>">
             <span class="title">
                 <?js if (item.type === 'global') { ?>
                 <?js= self.linkto(item.longname, 'Global') ?>
@@ -20,6 +20,8 @@ var self = this;
                 <?js= self.linkto(item.longname, item.longname) ?>
                 <?js     if (item.type === 'namespace') { ?>
                 <span class="static">static</span>
+                <?js     } else if (item.type === 'module') { ?>
+                <span class="static">module</span>
                 <?js     } ?>
                 <?js } ?>
             </span>
