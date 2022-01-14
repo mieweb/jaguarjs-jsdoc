@@ -8,6 +8,7 @@
 
         if (linenums) {
             source = source[0].getElementsByTagName('ol')[0];
+            if (source == null) return; // Happens when multi-line markdown code is output.
 
             numbered = Array.prototype.slice.apply(source.children);
             numbered = numbered.map(function(item) {
