@@ -328,6 +328,11 @@ li {
   padding-bottom: 10px;
   border-bottom: 1px solid #e1e1e1;
 }
+.main .readme h3 {
+  font-size: 1.3em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
 .main .readme li {
   font-size: 0.9em;
   margin-bottom: 10px;
