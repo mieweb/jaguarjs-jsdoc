@@ -333,6 +333,9 @@ li {
   margin-top: 20px;
   margin-bottom: 10px;
 }
+.main .readme li:first-child {
+  margin-top: 10px;
+}
 .main .readme li {
   font-size: 0.9em;
   margin-bottom: 10px;
